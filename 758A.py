@@ -1,16 +1,11 @@
-n = int(input())
+citizens = int(input())
+burles = list(map(int, input().split()))
+burles.sort()
 sum = 0
-for item in range(0, n):
-    string = input()
-    if(string == "Icosahedron"):
-        sum = sum + 20
-    elif(string == "Tetrahedron"):
-        sum = sum + 4
-    elif(string == "Cube"):
-        sum = sum + 6
-    elif(string == "Octahedron"):
-        sum = sum + 8
-    elif(string == "Dodecahedron"):
-        sum = sum + 12
-   
-print(sum)
+if(len(burles) == 1):
+    print(0)
+else:
+    for item in range(0, len(burles) - 1):
+        sum = sum + burles[-1] - burles[item]
+    print(sum)
+    
